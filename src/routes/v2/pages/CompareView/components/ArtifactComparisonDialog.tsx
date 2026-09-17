@@ -59,6 +59,8 @@ function ComparisonPane({
     normalizeRawType(type ?? undefined),
   );
 
+  const byteLength = artifact?.artifact_data?.total_size;
+
   return (
     <BlockStack
       align="stretch"
@@ -89,6 +91,7 @@ function ComparisonPane({
               artifactId={artifact.id}
               type={normalizedType}
               isFullscreen
+              byteLength={byteLength}
             />
           </SuspenseWrapper>
         )}
